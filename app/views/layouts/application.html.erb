@@ -20,7 +20,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="/home/index">
+		      <a class="navbar-brand" href="/index">
 		      	<img alt="Brand" src="http://placehold.it/20x20">
 		      </a>
 		    </div>
@@ -32,10 +32,10 @@
 		        <li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manor <span class="caret"></span></a>
 		          <ul class="dropdown-menu" role="menu">
-		            <li><a href="/people/guy">Guy</a></li>
-		            <li><a href="/people/ginger">Ginger</a></li>
-		            <li><a href="/people/brandi">Brandi</a></li>
-		            <li><a href="/people/brian">Brian</a></li>
+		            <li><a href="/guy">Guy</a></li>
+		            <li><a href="/ginger">Ginger</a></li>
+		            <li><a href="/brandi">Brandi</a></li>
+		            <li><a href="/brian">Brian</a></li>
 		          </ul>
 		        </li>
 		        <!-- <li><a href="#">Link</a></li> -->
@@ -48,7 +48,7 @@
 		            <li><a href="#">Spring</a></li>
 		          </ul>
 		        </li>
-		        <li><a href="/home/contact">Contact Us</a></li>
+		        <li><a href="/contact">Contact Us</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
@@ -57,10 +57,11 @@
 		<%= yield %>
 
 		<footer>
-			<p>&copy; 2015 Moose Manor | <a href="/account/login">Login</a></p>
+			<p>&copy; 2015 Moose Manor | <a href="/login">Login</a></p>
 		</footer>
 
-
+		<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
 </body>
 </html>
