@@ -12,13 +12,15 @@
 //
 //= require jquery
 //= require best_in_place
-//= require bootstrap-sprockets
+
+//= require jquery-ui
 //= require best_in_place.jquery-ui
+
+//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
-  /* Activating Best In Place */
-  jQuery(".best_in_place").best_in_place();
-});
+jQuery(document).ready(function($) { 
+	$('.best_in_place').best_in_place(); 
+})

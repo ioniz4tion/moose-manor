@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/index' => 'application#index'
   get '/contact' => 'application#contact'
   get '/about' => 'application#about'
+  get '/faq' => 'application#faq'
 
   devise_scope :user do
     get '/login' => 'users/sessions#new'
@@ -19,6 +20,9 @@ Rails.application.routes.draw do
   get '/brian' => 'people#brian'
   get '/guy' => 'people#guy'
   get '/ginger' => 'people#ginger'
+
+  get '/homes/:i' => 'application#index_text'
+  put '/homes/:i' => 'application#index_text'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

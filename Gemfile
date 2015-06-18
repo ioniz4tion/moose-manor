@@ -19,6 +19,7 @@ gem 'devise'
 gem 'best_in_place', '~> 3.0.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails', '~> 5.0.5'
 #bootstrap
 gem 'bootstrap-sass', '~> 3.3.4.1'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
