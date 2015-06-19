@@ -1,0 +1,47 @@
+<style>
+  nav, footer {
+    display: none;
+  }
+</style>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <div class="login">
+
+    <div class="fluid-container">
+
+    <div class="page-header">
+      <h1>Login <small>Admin only</small></h1>
+    </div>
+
+    <div class="col-md-4">
+      <p>Username</p>
+    </div>
+
+    <div class="col-md-8">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span></span>
+        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <p>Password</p>
+    </div>
+
+    <div class="col-md-8">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-eye-close"></span></span>
+        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Log in" %>
+    </div>
+
+  </div>
+
+<% end %>
