@@ -1,20 +1,20 @@
 @mixin transition($transition...) {
-    $max: length($transition);
-    $transitions: '';
+	$max: length($transition);
+	$transitions: '';
 
-    @for $i from 1 through $max {
-        $transitions: #{$transitions + nth($transition, $i)};
+	@for $i from 1 through $max {
+		$transitions: #{$transitions + nth($transition, $i)};
 
-        @if $i < $max {
-            $transitions: #{$transitions + ", "};
-        }
-    }
+		@if $i < $max {
+			$transitions: #{$transitions + ", "};
+		}
+	}
 
-        -ms-transition: $transitions;
-    -webkit-transition: $transitions;
-       -moz-transition: $transitions;
-         -o-transition: $transitions;
-            transition: $transitions;
+			-ms-transition: $transitions;
+	-webkit-transition: $transitions;
+		 -moz-transition: $transitions;
+			 -o-transition: $transitions;
+					transition: $transitions;
 }
 
 @mixin transform($transform) {
@@ -34,8 +34,9 @@
 }
 
 body {
-	font-family: 'Maven Pro';
-	background: #e7e7e7 url('../Images/bright-squares.png');
+	font-family: 'Maven Pro' !important;
+	background: #e7e7e7 url('/assets/bright-squares.png') !important;
+	padding-top: 50px;
 }
 
 nav {
@@ -46,8 +47,8 @@ nav {
 
 		&:hover {
 			// background-color: #1e9cd7 !important;
-            background-color: #000 !important;
-            color: #fff !important;
+			background-color: #000 !important;
+			color: #fff !important;
 		}
 	}
 
@@ -57,8 +58,8 @@ nav {
 }
 
 #carousel-example-generic {
-	margin-top: 50px;
-    background: #e7e7e7;
+	// margin-top: 50px;
+	background: #e7e7e7;
 
 	ol li {
 		width: 12px;
@@ -82,10 +83,10 @@ nav {
 }
 
 .jumbotron {
-	padding-left: 60px;
-	padding-right: 60px;
-	margin-bottom: 0;
-    background: transparent;
+	padding-left: 60px !important;
+	padding-right: 60px !important;
+	margin-bottom: 0 !important;
+	background: transparent;
 }
 
 footer {
@@ -144,6 +145,7 @@ footer {
 	display: block;
 	width: 80%;
 	padding: 50px 0;
+	padding-top: 0;
 	overflow-x: hidden;
 	overflow-y: auto;
 
@@ -157,13 +159,49 @@ footer {
 }
 
 .image {
-    display: block;
-    width: 500px;
-    height: 500px;
-    margin: 0 auto;
-    margin-top: 60px;
-    padding: 20px;
-    border: 5px solid #777;
-    border-radius: 50%;
-    overflow: hidden;
+	display: block;
+	width: 300px;
+	height: 300px;
+	margin: 0 auto;
+	padding: 20px;
+	border: 5px solid #777;
+	border-radius: 50%;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		border-radius: 50%;
+	}
+}
+
+.col-md-10 {
+	margin: 0 auto;
+	float: none !important;
+
+	h1 {
+		text-align: center;
+	}
+}
+
+.col-md-4.col-xs-6 {
+	margin-bottom: 40px;
+
+	.thumb {
+		display: block;
+		width: 60%;
+		margin: 0 auto;
+		padding: 10px;
+		border: 5px solid #777;
+		border-radius: 50%;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			border-radius: 50%;
+		}
+
+		~ h3 {
+			text-align: center;
+		}
+	}
 }
