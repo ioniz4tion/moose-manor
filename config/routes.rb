@@ -7,7 +7,18 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'application#index'
-  get '/index' => 'application#index'
+  get '/home' => 'application#index'
+
+  get '/brandi' => 'people#brandi'
+  get '/brian' => 'people#brian'
+  get '/guy' => 'people#guy'
+  get '/ginger' => 'people#ginger'
+
+  get '/summer' => 'application#summer'
+  get '/fall' => 'application#fall'
+  get '/winter' => 'application#winter'
+  get '/spring' => 'application#spring'
+  
   get '/contact' => 'application#contact'
   get '/about' => 'application#about'
   get '/faq' => 'application#faq'
@@ -16,10 +27,7 @@ Rails.application.routes.draw do
     get '/login' => 'users/sessions#new'
   end
 
-  get '/brandi' => 'people#brandi'
-  get '/brian' => 'people#brian'
-  get '/guy' => 'people#guy'
-  get '/ginger' => 'people#ginger'
+  
 
   get '/homes/:i' => 'application#index_text'
   put '/homes/:i' => 'application#index_text'

@@ -16,6 +16,7 @@
 //= require best_in_place.jquery-ui
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
 
 $(document).ready(function() {

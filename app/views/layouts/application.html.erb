@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>MooseManor</title>
+  <title>Moose Manor</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -19,7 +19,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="/index">
+		      <a class="navbar-brand" href="/home">
 		      	<img alt="Brand" src="http://placehold.it/20x20">
 		      </a>
 		    </div>
@@ -29,7 +29,7 @@
 		      <ul class="nav navbar-nav">
 		        <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
 		        <li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manor <span class="caret"></span></a>
+		          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manor <span class="caret"></span></a>
 		          <ul class="dropdown-menu" role="menu">
 		            <li><a href="/guy">Guy</a></li>
 		            <li><a href="/ginger">Ginger</a></li>
@@ -41,10 +41,10 @@
 		        <li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Things to Do <span class="caret"></span></a>
 		          <ul class="dropdown-menu" role="menu">
-		            <li><a href="#">Summer</a></li>
-		            <li><a href="#">Fall</a></li>
-		            <li><a href="#">Winter</a></li>
-		            <li><a href="#">Spring</a></li>
+		            <li><a href="/summer">Summer</a></li>
+		            <li><a href="/fall">Fall</a></li>
+		            <li><a href="/winter">Winter</a></li>
+		            <li><a href="/spring">Spring</a></li>
 		          </ul>
 		        </li>
 		        <li><a href="/about">About Us</a></li>
@@ -59,9 +59,9 @@
 		<footer>
 			<p>&copy; 2015 Moose Manor | <a href="/login">Login</a></p>
 		</footer>
-
+		
 		<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-</body>
+	</body>
 </html>
