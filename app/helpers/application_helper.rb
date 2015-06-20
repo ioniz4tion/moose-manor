@@ -64,4 +64,62 @@ module ApplicationHelper
 		end
 	end
 
+	def pick_weather(yahoo_text)
+		
+		case yahoo_text
+
+			when "Cloudy", "Mostly Cloudy"
+				'<div class="icon icon-cloud"></div>'.html_safe
+
+			when "Sunny", "Mostly Clear", "Mostly Sunny", "Clear"
+				'<div class="icon icon-sun"></div>'.html_safe
+
+			when "PM Showers", "Showers", "AM Showers"
+				'<div class="icon icon-basecloud"></div>
+				<div class="icon icon-showers"></div>'.html_safe
+
+			when "Showers Late"
+					'<div class="icon icon-basecloud"></div>
+					<div class="icon icon-showers"></div>
+					<div class="icon icon-night"></div>'.html_safe
+
+			when "Partly Cloudy"
+				'<div class="icon icon-basecloud"></div>
+				<div class="icon icon-sunny"></div>'.html_safe
+
+			when "Partly Cloudy/Wind"
+				'<div class="icon icon-basecloud"></div>
+				<div class="icon icon-windy"></div>
+				<div class="icon icon-sunny"></div>'.html_safe
+
+			when "Rain/Wind Late"
+				'<div class="icon icon-windyraincloud"></div>
+				<div class="icon icon-windyrain"></div>'.html_safe
+
+			when "Rain/Wind", "PM Showers/Wind"
+				'<div class="icon icon-windyraincloud"></div>
+				<div class="icon icon-windyrain"></div>'.html_safe
+
+			when "Clouds Early/Clearing Late"
+				'<div class="icon icon-2 icon-cloud"></div>
+				<div class="icon icon-moon"></div>'.html_safe
+
+			when "Scattered Thunderstorms"
+				'<div class="icon icon-basecloud"></div>
+				<div class="icon icon-thunder"></div>'.html_safe
+
+			when "AM Clouds/PM Sun"
+				'<div class="icon icon-cloud"></div>
+				<div class="icon icon-2 icon-sun"></div>'.html_safe
+
+			when "Rain", "PM Rain", "AM Light Rain"
+				'<div class="icon icon-basecloud"></div>
+				<div class="icon icon-rainy"></div>'.html_safe
+
+			else
+				'<div class="icon icon-cloud"></div>'.html_safe
+			
+		end		
+	end
+
 end
