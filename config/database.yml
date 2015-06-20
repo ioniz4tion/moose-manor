@@ -22,8 +22,14 @@ default: &default
   pool: 5
 
 development:
-  <<: *default
+  adapter: postgresql
   database: moose-manor_development
+  username: Zack # replace this with your own user name
+  password: qpalzm # replace this with your own password
+  host: localhost
+  encoding: UTF8
+  pool: 5
+  timeout: 5000
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

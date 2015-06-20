@@ -35,6 +35,9 @@ class ApplicationController < ActionController::Base
       format.json { respond_with_bip(@activity) }      
     end
   end
+  def summer_new
+    @activity = ThingsToDoSummer.new
+  end
 
   def fall
     @Activities = ThingsToDoFall.all
@@ -47,6 +50,9 @@ class ApplicationController < ActionController::Base
       format.json { respond_with_bip(@activity) }      
     end
   end
+  def fall_new
+    @activity = ThingsToDoFall.new
+  end
 
   def spring
     @Activities = ThingsToDoSpring.all
@@ -55,9 +61,12 @@ class ApplicationController < ActionController::Base
     @activity = ThingsToDoSpring.find(params[:id])
     @activity.update(params.require(:things_to_do_spring).permit(:image,:name,:description,:url))
     respond_to do |format|
-      format.html { redirect_to :sring, notice: 'Success' }
+      format.html { redirect_to :spring, notice: 'Success' }
       format.json { respond_with_bip(@activity) }      
     end
+  end
+  def spring_new
+    @activity = ThingsToDoSpring.new
   end
 
   def winter
@@ -70,6 +79,9 @@ class ApplicationController < ActionController::Base
       format.html { redirect_to :winter, notice: 'Success' }
       format.json { respond_with_bip(@activity) }      
     end
+  end
+  def winter_new
+    @activity = ThingsToDoWinter.new
   end
 
 end

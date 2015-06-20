@@ -37,6 +37,11 @@ Rails.application.routes.draw do
   put '/things_to_do_winters/:id' => 'application#winter_update'
   put '/things_to_do_springs/:id' => 'application#spring_update'
 
+  post '/things_to_do_summers/new' => 'application#summer_new'
+  post '/things_to_do_falls/new' => 'application#fall_new'
+  post '/things_to_do_winters/new' => 'application#winter_new'
+  post '/things_to_do_springs/new' => 'application#spring_new'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
