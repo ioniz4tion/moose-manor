@@ -51,8 +51,7 @@
 </div>
 
 <div class="jumbotron text-center">
-	<h1><%= bip(@home[0], :text, :textarea) %></h1>
-	<p>Just a small cabin of 4,700 square feet on 10 acres.
-	</p>
-	<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+	<h1><%= bip(@home[0], :text) %></h1>
+	<p><%= bip(@home[1], :text, :textarea) %></p>
+	<p><a class="btn btn-primary btn-lg" href="/about" role="button">Learn more</a></p>
 </div>

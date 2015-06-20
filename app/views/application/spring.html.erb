@@ -5,77 +5,18 @@
 			<h1>Fun Spring Activities</h1>
 		</div>
 
-		<div class="col-md-4 col-xs-6">
-			<div class="thumb">
-				<img src="http://placehold.it/500x500">
-			</div>
-			<h3>Activity</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-			<a href="javascript:void(0)">www.site.url</a>
-		</div>
+		<% @Activities.each do |activity| %>
 
-		<div class="col-md-4 col-xs-6">
-			<div class="thumb">
-				<img src="http://placehold.it/500x500">
+			<div class="col-md-4 col-xs-6">
+				<div class="thumb">
+					<img src="<%= activity.image %>">
+				</div>
+				<h3><%= bip(activity, :name) %></h3>
+				<p><%= bip(activity, :description, :textarea) %></p>
+				<a href="<%= activity.url %>"><%= bip(activity, :url) %></a>
 			</div>
-			<h3>Activity</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-			<a href="javascript:void(0)">www.site.url</a>
-		</div>
 
-		<div class="col-md-4 col-xs-6">
-			<div class="thumb">
-				<img src="http://placehold.it/500x500">
-			</div>
-			<h3>Activity</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-			<a href="javascript:void(0)">www.site.url</a>
-		</div>
-
-		<div class="col-md-4 col-xs-6">
-			<div class="thumb">
-				<img src="http://placehold.it/500x500">
-			</div>
-			<h3>Activity</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-			<a href="javascript:void(0)">www.site.url</a>
-		</div>
-
-		<div class="col-md-4 col-xs-6">
-			<div class="thumb">
-				<img src="http://placehold.it/500x500">
-			</div>
-			<h3>Activity</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-			<a href="javascript:void(0)">www.site.url</a>
-		</div>
-
-		<div class="col-md-4 col-xs-6">
-			<div class="thumb">
-				<img src="http://placehold.it/500x500">
-			</div>
-			<h3>Activity</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-			<a href="javascript:void(0)">www.site.url</a>
-		</div>
-
-		<div class="col-md-4 col-xs-6">
-			<div class="thumb">
-				<img src="http://placehold.it/500x500">
-			</div>
-			<h3>Activity</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-			<a href="javascript:void(0)">www.site.url</a>
-		</div>
-
-		<div class="col-md-4 col-xs-6">
-			<div class="thumb">
-				<img src="http://placehold.it/500x500">
-			</div>
-			<h3>Activity</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-			<a href="javascript:void(0)">www.site.url</a>
-		</div>
+		<% end %>
 
 	</div>
 </div>

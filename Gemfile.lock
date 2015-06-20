@@ -31,13 +31,10 @@ GEM
     autoprefixer-rails (5.2.0.1)
       execjs
       json
-<<<<<<< HEAD
-=======
     bcrypt (3.1.10)
     best_in_place (3.0.3)
       actionpack (>= 3.2)
       railties (>= 3.2)
->>>>>>> bc47b05b83542db2ad75d4bac542da62809b5bf8
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
@@ -76,7 +73,7 @@ GEM
     multi_json (1.11.1)
     orm_adapter (0.5.0)
     pg (0.18.2)
-    rack (1.5.4)
+    rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.1.6)
@@ -135,12 +132,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
-  bootstrap-sass
-=======
   best_in_place (~> 3.0.1)
   bootstrap-sass (~> 3.3.4.1)
->>>>>>> bc47b05b83542db2ad75d4bac542da62809b5bf8
   coffee-rails (~> 4.0.0)
   devise
   jbuilder (~> 2.0)

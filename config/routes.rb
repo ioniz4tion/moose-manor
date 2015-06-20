@@ -29,8 +29,13 @@ Rails.application.routes.draw do
 
   
 
-  get '/homes/:i' => 'application#index_text'
-  put '/homes/:i' => 'application#index_text'
+  get '/homes/:id' => 'application#index_text'
+  put '/homes/:id' => 'application#index_text'
+
+  put '/things_to_do_summers/:id' => 'application#summer_update'
+  put '/things_to_do_falls/:id' => 'application#fall_update'
+  put '/things_to_do_winters/:id' => 'application#winter_update'
+  put '/things_to_do_springs/:id' => 'application#spring_update'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
