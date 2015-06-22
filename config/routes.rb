@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
   put '/slides/:id' => 'application#slide_update'
   post '/slides/new' => 'application#slide_new'
-  delete '/faqs/:id' => 'application#slide_destroy'
+  delete '/slides/:id' => 'application#slide_destroy'
 
   get '/faq' => 'application#faq'
   put '/faqs/:id' => 'application#faq_update'
