@@ -14,9 +14,12 @@
 				<h3><%= bip(activity, :name) %></h3>
 				<p><%= bip(activity, :description, :textarea) %></p>
 				<a href="<%= activity.url %>"><%= bip(activity, :url) %></a>
+				<%= cms_delete(activity) %>
 			</div>
 
 		<% end %>
+
+		<%= cms_add("/things_to_do_springs/new", "Add Activity") %>
 
 	</div>
 </div>

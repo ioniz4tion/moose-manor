@@ -1,0 +1,6 @@
+<% @faqs.each do |faq| %>
+	Question: <%= bip(faq, :question, :textarea) %><br/>
+	Answer: <%= bip(faq, :answer, :textarea) %><br/>
+	<%= cms_delete(faq) %><br/><br/>
+<% end %>
+<%= cms_add("faqs/new", "Add FAQ") %>

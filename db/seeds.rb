@@ -44,4 +44,10 @@ ThingsToDoWinter.create!([
 	{image: "http://placehold.it/500x500", name: "Activity", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...", url: "www.site.url"},
 	{image: "http://placehold.it/500x500", name: "Activity", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...", url: "www.site.url"},
 	{image: "http://placehold.it/500x500", name: "Activity", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...", url: "www.site.url"}
-	])	
+	])
+Faq.create!([
+	{question: "Type your question here.", answer: "Type the answer to your question here."},
+	{question: "Type your question here.", answer: "Type the answer to your question here."},
+	{question: "Type your question here.", answer: "Type the answer to your question here."},
+	{question: "Type your question here.", answer: "Type the answer to your question here."}
+])

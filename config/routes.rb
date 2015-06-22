@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   
   get '/contact' => 'application#contact'
   get '/about' => 'application#about'
-  get '/faq' => 'application#faq'
+  
 
   devise_scope :user do
     get '/login' => 'users/sessions#new'
@@ -32,6 +32,11 @@ Rails.application.routes.draw do
   get '/homes/:id' => 'application#index_text'
   put '/homes/:id' => 'application#index_text'
 
+  get '/faq' => 'application#faq'
+  put '/faqs/:id' => 'application#faq_update'
+  post '/faqs/new' => 'application#faq_new'
+  delete '/faqs/:id' => 'application#faq_destroy'
+
   put '/things_to_do_summers/:id' => 'application#summer_update'
   put '/things_to_do_falls/:id' => 'application#fall_update'
   put '/things_to_do_winters/:id' => 'application#winter_update'
@@ -41,6 +46,11 @@ Rails.application.routes.draw do
   post '/things_to_do_falls/new' => 'application#fall_new'
   post '/things_to_do_winters/new' => 'application#winter_new'
   post '/things_to_do_springs/new' => 'application#spring_new'
+
+  delete '/things_to_do_summers/:id' => 'application#summer_destroy'
+  delete '/things_to_do_falls/:id' => 'application#fall_destroy'
+  delete '/things_to_do_winters/:id' => 'application#winter_destroy'
+  delete '/things_to_do_springs/:id' => 'application#spring_destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

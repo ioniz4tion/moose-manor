@@ -14,6 +14,7 @@
 				<h3><%= bip(activity, :name) %></h3>
 				<p><%= bip(activity, :description, :textarea) %></p>
 				<a href="<%= activity.url %>"><%= bip(activity, :url) %></a>
+				<%= cms_delete(activity) %>
 			</div>
 
 		<% end %>

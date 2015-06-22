@@ -21,67 +21,108 @@ class ApplicationController < ActionController::Base
 
   def contact
   end
+
   def faq
+    @faqs = Faq.all
+  end
+  def faq_update
+    updateActivity(Faq,:faq,:faq)
+  end
+  def faq_new
+    createActivity(Faq, :faq, {question: "Type your question here.", answer: "Type the answer to your question here."})
+  end
+  def faq_destroy
+    destroyActivity(Faq, :faq)
   end
 
   def summer
     @Activities = ThingsToDoSummer.all
   end
   def summer_update
-    @activity = ThingsToDoSummer.find(params[:id])
-    @activity.update(params.require(:things_to_do_summer).permit(:image,:name,:description,:url))
-    respond_to do |format|
-      format.html { redirect_to :summer, notice: 'Success' }
-      format.json { respond_with_bip(@activity) }      
-    end
+    updateActivity(ThingsToDoSummer,:things_to_do_summer,:summer)
   end
   def summer_new
-    @activity = ThingsToDoSummer.new
+    createActivity(ThingsToDoSummer, :summer, {image: "http://placehold.it/500x500", name: "Activity", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...", url: "www.site.url"})
+  end
+  def summer_destroy
+    destroyActivity(ThingsToDoSummer, :summer)
   end
 
   def fall
     @Activities = ThingsToDoFall.all
   end
   def fall_update
-    @activity = ThingsToDoFall.find(params[:id])
-    @activity.update(params.require(:things_to_do_fall).permit(:image,:name,:description,:url))
-    respond_to do |format|
-      format.html { redirect_to :fall, notice: 'Success' }
-      format.json { respond_with_bip(@activity) }      
-    end
+    updateActivity(ThingsToDoFall,:things_to_do_fall,:fall)
   end
   def fall_new
-    @activity = ThingsToDoFall.new
+    createActivity(ThingsToDoFall, :fall,{image: "http://placehold.it/500x500", name: "Activity", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...", url: "www.site.url"})
+  end
+  def fall_destroy
+    destroyActivity(ThingsToDoFall, :fall)
   end
 
   def spring
     @Activities = ThingsToDoSpring.all
   end
   def spring_update
-    @activity = ThingsToDoSpring.find(params[:id])
-    @activity.update(params.require(:things_to_do_spring).permit(:image,:name,:description,:url))
-    respond_to do |format|
-      format.html { redirect_to :spring, notice: 'Success' }
-      format.json { respond_with_bip(@activity) }      
-    end
+    updateActivity(ThingsToDoSpring,:things_to_do_spring,:spring)
   end
   def spring_new
-    @activity = ThingsToDoSpring.new
+    createActivity(ThingsToDoSpring, :spring, {image: "http://placehold.it/500x500", name: "Activity", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...", url: "www.site.url"})
+  end
+  def spring_destroy
+    destroyActivity(ThingsToDoSpring, :spring)
   end
 
   def winter
     @Activities = ThingsToDoWinter.all
   end
   def winter_update
-    @activity = ThingsToDoWinter.find(params[:id])
-    @activity.update(params.require(:things_to_do_summer).permit(:image,:name,:description,:url))
+    updateActivity(ThingsToDoWinter,:things_to_do_winter,:winter)
+  end
+  def winter_new
+    createActivity(ThingsToDoWinter, :winter, {image: "http://placehold.it/500x500", name: "Activity", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...", url: "www.site.url"})
+  end
+  def winter_destroy
+    destroyActivity(ThingsToDoWinter, :winter)
+  end
+
+
+
+  def updateActivity(model,table_name,route)
+    @activity = model.find(params[:id])
+    @activity.update(params.require(table_name).permit(:image,:name,:description,:url, :question, :answer))
     respond_to do |format|
-      format.html { redirect_to :winter, notice: 'Success' }
+      format.html { redirect_to route, notice: 'Success' }
       format.json { respond_with_bip(@activity) }      
     end
   end
-  def winter_new
-    @activity = ThingsToDoWinter.new
+
+  def createActivity(model,route, defaults = "")
+    if defaults == ""  
+      @record = model.new
+    else
+      @record = model.new(defaults)
+    end
+      
+
+    respond_to do |format|
+      if @record.save
+        format.html { redirect_to route, notice: 'Creation Successful.' }
+        format.json { render :show, status: :created, location: route }
+      else
+        format.html { render :new }
+        format.json { render json: gen_hotels_path.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
+  def destroyActivity(model,route)
+    @activity = model.find(params[:id])
+    @activity.destroy
+    respond_to do |format|
+      format.html { redirect_to route, notice: 'Item was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
 end
