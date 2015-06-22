@@ -11,6 +11,7 @@
 				<div class="thumb">
 					<img src="<%= activity.image %>">
 				</div>
+				<%= cms_upload(activity, :image, "Activity Image") %>
 				<h3><%= bip(activity, :name) %></h3>
 				<p><%= bip(activity, :description, :textarea) %></p>
 				<a href="<%= activity.url %>"><%= bip(activity, :url) %></a>

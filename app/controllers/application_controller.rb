@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   def index
   	@home = Home.all
+    @slides = Slide.all
   end
 
   def index_text
@@ -20,6 +21,16 @@ class ApplicationController < ActionController::Base
   end
 
   def contact
+  end
+
+  def slide_update
+    updateActivity(Slide, :slide,:home)
+  end
+  def slide_new
+    createActivity(Slide, :home, {title: "Slide", caption: "This is the caption for slide", image: "http://placehold.it/1000x500"})
+  end
+  def slide_destroy
+    destroyActivity(Slide, :home)
   end
 
   def faq

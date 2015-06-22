@@ -37,9 +37,9 @@ module ApplicationHelper
 			capture do
 	      form_for model, url: model.class.table_name.to_s + '/' + model.id.to_s, 
 	      		:html => { :multipart => true } do |form|
-	        concat form.label text
+	        # concat form.label text
 	        concat form.file_field type
-	        concat form.submit
+	        concat form.submit "Upload Image"
 	      end
 	    end
     end

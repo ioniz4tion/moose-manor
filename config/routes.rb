@@ -32,6 +32,10 @@ Rails.application.routes.draw do
   get '/homes/:id' => 'application#index_text'
   put '/homes/:id' => 'application#index_text'
 
+  put '/slides/:id' => 'application#slide_update'
+  post '/slides/new' => 'application#slide_new'
+  delete '/faqs/:id' => 'application#slide_destroy'
+
   get '/faq' => 'application#faq'
   put '/faqs/:id' => 'application#faq_update'
   post '/faqs/new' => 'application#faq_new'

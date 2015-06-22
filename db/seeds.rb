@@ -51,3 +51,9 @@ Faq.create!([
 	{question: "Type your question here.", answer: "Type the answer to your question here."},
 	{question: "Type your question here.", answer: "Type the answer to your question here."}
 ])
+Slide.create!([
+	{image: "http://placehold.it/1000x500", title: "Slide 1", caption: "This is the caption for slide 1"},
+	{image: "http://placehold.it/1366x500", title: "Slide 2", caption: "This is the caption for slide 2"},
+	{image: "http://placehold.it/1000x600", title: "Slide 3", caption: "This is the caption for slide 3"},
+	{image: "http://placehold.it/300x400", title: "Slide 4", caption: "This is the caption for slide 4"}
+])
